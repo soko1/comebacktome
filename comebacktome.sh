@@ -33,7 +33,7 @@ CONF="wp-config.php"
 
 if [ ! -f $CONF ]; then
    echo
-   echo "\"$CONF\" not found. Exiting..."
+   echo "File \"$CONF\" not found. Exiting..."
    echo
    exit
 fi
