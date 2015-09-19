@@ -1,0 +1,4 @@
+GPG_PASS="YOUR_PASSWORDPHRASE"
+DUMP_NAME="dump.sql"
+COMMIT_DESC=`date +%Y-%m-%d`
+GIT_REMOTE="git@bitbucket.org:username/repo.git"

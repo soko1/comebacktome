@@ -13,10 +13,13 @@
 # This version for wordpress.
 #
 
-GPG_PASS="YOUR_PASSWORDPHRASE"
-DUMP_NAME="dump.sql"
-COMMIT_DESC=`date +%Y-%m-%d`
-GIT_REMOTE="git@bitbucket.org:username/repo.git"
+if [-f comebacktome_config ]; then
+. comebacktome_config
+else
+  echo "I need \"comebacktome_config\"."
+  echo "See example here: https://raw.githubusercontent.com/soko1/comebacktome/master/comebacktome_config"
+  exit
+fi
 
 CONF="wp-config.php"
 
@@ -27,7 +30,7 @@ DB_NAME=`grep DB_NAME $CONF  | awk '{print $2}' |sed s/\'//g | sed s/\)//g | sed
 
 if [ ! -d .git ]; then git init; git remote add origin $GIT_REMOTE; fi
 
-if [ -f $DUMP_NAME.gpg ]; then rm -f $DUMP_NAME.gpg; fi
+if [ -f $DUMP_NAME.gz.gpg ]; then rm -f $DUMP_NAME.gz.gpg; fi
 
 mysqldump -u$DB_USER -p$DB_PASS -h$DB_HOST $DB_NAME | gzip -9c >$DUMP_NAME.gz
 
