@@ -31,6 +31,13 @@ fi
 
 CONF="wp-config.php"
 
+if [ ! -f $CONF ]; then
+   echo
+   echo "\"$CONF\" not found. Exiting..."
+   echo
+   exit
+fi
+
 DB_USER=`grep DB_USER $CONF  | awk '{print $2}' |sed s/\'//g | sed s/\)//g | sed s/\;//g`
 DB_PASS=`grep DB_PASSWORD $CONF  | awk '{print $2}' |sed s/\'//g | sed s/\)//g | sed s/\;//g`
 DB_HOST=`grep DB_HOST $CONF  | awk '{print $2}' |sed s/\'//g | sed s/\)//g | sed s/\;//g`
