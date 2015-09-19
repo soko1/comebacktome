@@ -34,7 +34,7 @@ CONF="wp-config.php"
 if [ ! -f $CONF ]; then
    echo
    echo "File \"$CONF\" not found. "
-   echo "Please read INSTALL.md: https://github.com/soko1/comebacktome/blob/master/INSTALL.md"
+   echo "Please read README.md: https://github.com/soko1/comebacktome/blob/master/README.md"
    echo "Exiting..."
    echo
    exit
