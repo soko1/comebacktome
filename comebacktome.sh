@@ -16,8 +16,16 @@
 if [ -f comebacktome_config ]; then
 . comebacktome_config
 else
+  echo 
   echo "I need \"comebacktome_config\"."
-  echo "See example here: https://raw.githubusercontent.com/soko1/comebacktome/master/comebacktome_config"
+  echo
+  echo "Please run:"
+  echo
+  echo "$ wget https://raw.githubusercontent.com/soko1/comebacktome/master/comebacktome_config.example"
+  echo "$ mv comebacktome_config.example comebacktome_config"
+  echo
+  echo "and edit file \"comebacktome_config\"".
+  echo
   exit
 fi
 
