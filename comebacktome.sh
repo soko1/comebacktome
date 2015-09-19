@@ -13,7 +13,7 @@
 # This version for wordpress.
 #
 
-if [-f comebacktome_config ]; then
+if [ -f comebacktome_config ]; then
 . comebacktome_config
 else
   echo "I need \"comebacktome_config\"."
