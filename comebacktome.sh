@@ -29,7 +29,7 @@ if [ ! -d .git ]; then git init; git remote add origin $GIT_REMOTE; fi
 
 if [ -f $DUMP_NAME.gpg ]; then rm -f $DUMP_NAME.gpg; fi
 
-mysqldump -u$DB_USER -p$DB_PASS -h$DB_HOST $DB_NAME | gzip -9c >dump.sql.gz
+mysqldump -u$DB_USER -p$DB_PASS -h$DB_HOST $DB_NAME | gzip -9c >$DUMP_NAME.gz
 
 gpg -c --passphrase $GPG_PASS $DUMP_NAME.gz
 rm -f $DUMP_NAME.gz
