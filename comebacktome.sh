@@ -14,7 +14,7 @@
 #
 
 if [ -f comebacktome_config ]; then
-. comebacktome_config
+. ./comebacktome_config
 else
   echo 
   echo "I need \"comebacktome_config\"."
