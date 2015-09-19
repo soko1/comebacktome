@@ -34,10 +34,12 @@ CONF="wp-config.php"
 if [ ! -f $CONF ]; then
    echo
    echo "File \"$CONF\" not found. Exiting..."
+   echo "Please read INSTALL.md: https://github.com/soko1/comebacktome/blob/master/INSTALL.md"
    echo
    exit
 fi
 
+# horror :)
 DB_USER=`grep DB_USER $CONF  | awk '{print $2}' |sed s/\'//g | sed s/\)//g | sed s/\;//g`
 DB_PASS=`grep DB_PASSWORD $CONF  | awk '{print $2}' |sed s/\'//g | sed s/\)//g | sed s/\;//g`
 DB_HOST=`grep DB_HOST $CONF  | awk '{print $2}' |sed s/\'//g | sed s/\)//g | sed s/\;//g`
