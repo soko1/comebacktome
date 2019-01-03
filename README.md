@@ -13,7 +13,7 @@ $ wget https://raw.githubusercontent.com/soko1/comebacktome/master/comebacktome.
 $ wget https://raw.githubusercontent.com/soko1/comebacktome/master/comebacktome_config.example -O comebacktome_config 
 $ wget https://raw.githubusercontent.com/soko1/comebacktome/master/.gitignore
 $ chmod +x comebacktome.sh 
-$ chmod 700 comebacktome_config
+$ chmod 600 comebacktome_config
 $ vim comebacktome_config
 $ ./comebacktome.sh
 ```
